@@ -1,0 +1,57 @@
+h1. EHTabBar
+
+Created by EGG HAUS, Inc.
+
+EHTabBar is an imageless implementation of a tab bar similar to one found in Foursquare's iPhone application.
+
+
+h2. Methods
+
+_- (void) setTabs:(NSArray *) tbs;_
+Accepts an array of NSStrings to set the titles of the tabs. The number of tabs is equal to the number of NSStrings in the array.
+
+_- (void)selectTabAtIndex:(NSInteger)tabIndex;_
+Selects tab at the same index as the tabs are displayed starting at 0.
+
+_- (void) selectTab:(EHTab *) t;_
+Selects tab for a particular EHTab.
+
+_@property (nonatomic,retain) UIColor *selectedTextColor;_
+Sets the text color for selected tabs.
+
+_@property (nonatomic,retain) UIColor *deselectedTextColor;_
+Set the text color for tabs that aren't selected.
+
+_@property (nonatomic,retain) UIColor *shadowColor;_
+Sets the color of the border on the left of the tab starting at the upper right corner.
+
+_@property (nonatomic,retain) UIColor *borderColor;_
+Sets the color of the border on the bottom of the ETTabBar view, the EHTab starting from the bottom left corner to the upper right corner.
+
+_@property (nonatomic,retain) UIColor *tabColor;_
+Sets the color of the selected tab.
+
+
+h2. License
+
+EHTabBar is available under the MIT license:
+
+_Copyright (c) 2009 EGG HAUS, Inc.
+
+_Permission is hereby granted, free of charge, to any person obtaining a copy_
+_of this software and associated documentation files (the "Software"), to deal_
+_in the Software without restriction, including without limitation the rights_
+_to use, copy, modify, merge, publish, distribute, sublicense, and/or sell_
+_copies of the Software, and to permit persons to whom the Software is_
+_furnished to do so, subject to the following conditions:_
+
+_The above copyright notice and this permission notice shall be included in_
+_all copies or substantial portions of the Software._
+
+_THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR_
+_IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,_
+_FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE_
+_AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER_
+_LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,_
+_OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN_
+_THE SOFTWARE._
