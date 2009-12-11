@@ -17,18 +17,18 @@
 
 	
 	//Set up basic UIView
-	UIView *v = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 480)];
+	UIView *v = [[[UIView alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
 	v.backgroundColor = [UIColor grayColor];
 	
 	//Instanciate EHTabBar
-	EHTabBar *tabBar = [[EHTabBar alloc] initWithFrame:CGRectMake(0, 20, 320, 65)];
+	EHTabBar *tabBar = [[[EHTabBar alloc] initWithFrame:CGRectMake(0, 20, 320, 65)] autorelease];
 	tabBar.delegate = self;
 	tabBar.tabWidth = 100.0;
 	tabBar.selectedTextColor = [UIColor whiteColor];
 	tabBar.deselectedTextColor = [UIColor darkGrayColor];
 	
 	//Add tabs with a title
-	[tabBar setTabs:[NSArray arrayWithObjects:@"Test", @"Hello",nil]];
+	[tabBar setTabs:[NSArray arrayWithObjects:@"Test", @"Hello", nil]];
 	[v addSubview:tabBar];
 	
 	[window addSubview:v];
@@ -38,11 +38,10 @@
 }
 
 
-- (void)tabBar:(EHTabBar*)tabBar tabSelected:(NSInteger)selectedIndex;
-{
+- (void)tabBar:(EHTabBar*)tabBar tabSelected:(NSInteger)selectedIndex {
 	UIAlertView * errorAlert = [[UIAlertView alloc] initWithTitle:[NSString stringWithFormat:@"Tab %d was selected on EHTabBar %@",selectedIndex,tabBar] message:nil delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
 	[errorAlert show];
-	[errorAlert release];	
+	[errorAlert release];
 }
 
 - (void)dealloc {
