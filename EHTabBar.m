@@ -17,12 +17,11 @@
 @implementation EHTabBar
 
 @synthesize delegate = _delegate, selectedTabIndex = _selectedTabIndex, borderColor = _borderColor, shadowColor = _shadowColor, 
-tabColor = _tabColor, tabWidth = _tabWidth, selectedTextColor = _selectedTextColor, deselectedTextColor = _deselectedTextColor; 
+tabColor = _tabColor, tabWidth = _tabWidth, selectedTextColor = _selectedTextColor, deselectedTextColor = _deselectedTextColor;
 
-- (id)initWithFrame:(CGRect)frame {
-    if (self = [super initWithFrame:frame]) {
-        // Initialization code
-		self.backgroundColor = [UIColor colorWithRed:0.776 green:0.796 blue:0.827 alpha:1.0];
+- (id)init {
+    if (self = [super initWithFrame:CGRectMake(0, 0, 320, 65)]) {
+        self.backgroundColor = [UIColor colorWithRed:0.776 green:0.796 blue:0.827 alpha:1.0];
 		self.borderColor = [UIColor lightGrayColor];
 		self.shadowColor = [UIColor darkGrayColor];
 		self.tabColor = [UIColor grayColor];
@@ -30,16 +29,14 @@ tabColor = _tabColor, tabWidth = _tabWidth, selectedTextColor = _selectedTextCol
 		self.deselectedTextColor = [UIColor darkGrayColor];
 		_selectedTabIndex = 0;
 		_tabItems = [[NSMutableArray alloc] init];
-		self.tabWidth = 0;
+		self.tabWidth = 0.0;
     }
     return self;
 }
 
-- (void) setTabs:(NSArray *) tbs
-{
+- (void) setTabs:(NSArray *)tbs {
 	NSInteger index = 0;
-	for(NSString *title in tbs)
-	{
+	for(NSString *title in tbs) {
 		EHTab *t = [[[EHTab alloc] initWithTitle:title] autorelease];
 		t.borderColor = self.borderColor;
 		t.shadowColor = self.shadowColor;
@@ -60,7 +57,7 @@ tabColor = _tabColor, tabWidth = _tabWidth, selectedTextColor = _selectedTextCol
 }
 
 - (void) tabWasPressed: (id) sender
-{	
+{
 	[self selectTab:(EHTab *) sender];	
 	[self.delegate tabBar:self tabSelected:self.selectedTabIndex];
 }

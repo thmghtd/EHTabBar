@@ -10,13 +10,12 @@
 #import "EHTabBar.h"
 
 @interface EHTabBarController : UIViewController <EHTabBarDelegate> {
-    EHTabBar *tabBar_;
     NSArray *viewControllers_;
+    EHTabBar *tabBar_;
+    UIView *containerView_;
 }
 
-@property (nonatomic, readonly) EHTabBar *tabBar;
 @property (nonatomic, copy) NSArray *viewControllers;
-
-- (void)setViewControllers:(NSArray *)viewControllers;
+@property (nonatomic, readonly) EHTabBar *tabBar;
 
 @end

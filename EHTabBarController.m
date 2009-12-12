@@ -16,22 +16,40 @@
 
 - (id)init {
     if (self = [super init]) {
-        tabBar_ = [[[EHTabBar alloc] initWithFrame:CGRectMake(0, 20, 320, 65)] retain];
+        viewControllers_ = [[NSArray alloc] init];
+        tabBar_ = [[EHTabBar alloc] init];
         tabBar_.delegate = self;
-        tabBar_.tabWidth = 100.0;
-        tabBar_.selectedTextColor = [UIColor whiteColor];
-        tabBar_.deselectedTextColor = [UIColor darkGrayColor];
-        
-        [self.view addSubview:tabBar_];
-        self.view.backgroundColor = tabBar_.backgroundColor;
+        containerView_ = nil;
     }
     return self;
 }
 
+- (void)dealloc {
+    [viewControllers_ release];
+    viewControllers_ = nil;
+    
+    [containerView_ release];
+    containerView_ = nil;
+    
+    [tabBar_ release];
+    tabBar_ = nil;
+    
+    [super dealloc];
+}
+
+- (void)loadView {
+    [super loadView];
+    [self.view addSubview:tabBar_];
+    containerView_ = [[UIView alloc] initWithFrame:CGRectMake(0, tabBar_.frame.size.height, 320, 335)];
+    [self.view addSubview:containerView_];
+    [self tabBar:tabBar_ tabSelected:0];
+}
+
 - (void)setViewControllers:(NSArray *)viewControllers {
-    // TEMP HACK
+    [viewControllers_ release];
+    viewControllers_ = [viewControllers copy];
     NSMutableArray *titles = [NSMutableArray array];
-    for (UIViewController *vc in viewControllers) {
+    for (UIViewController *vc in viewControllers_) {
         [titles addObject:vc.title];
     }
     [tabBar_ setTabs:titles];
@@ -41,9 +59,11 @@
 #pragma mark EHTabBarDelegate methods
 
 - (void)tabBar:(EHTabBar *)tabBar tabSelected:(NSInteger)selectedIndex {
-    UIAlertView *errorAlert = [[UIAlertView alloc] initWithTitle:[NSString stringWithFormat:@"Tab %d was selected on EHTabBar %@",selectedIndex,tabBar] message:nil delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
-	[errorAlert show];
-	[errorAlert release];
+    for (UIView *v in [containerView_ subviews]) {
+        [v removeFromSuperview];
+    }
+    UIViewController *vc = [viewControllers_ objectAtIndex:selectedIndex];
+    [containerView_ addSubview:vc.view];
 }
 
 @end

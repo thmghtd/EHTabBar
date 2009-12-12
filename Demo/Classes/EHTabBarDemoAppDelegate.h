@@ -11,11 +11,8 @@
 
 @interface EHTabBarDemoAppDelegate : NSObject <UIApplicationDelegate> {
     UIWindow *window_;
-    EHTabBarController *tabBar_;
+    EHTabBarController *tabBarController_;
 }
-
-@property (nonatomic, retain) UIWindow *window;
-@property (nonatomic, retain) EHTabBarController *tabBar;
 
 @end
 

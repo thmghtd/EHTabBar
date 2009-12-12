@@ -18,4 +18,10 @@
     return self;
 }
 
+- (void)loadView {
+    [super loadView];
+    
+    self.view.backgroundColor = [UIColor blueColor];
+}
+
 @end

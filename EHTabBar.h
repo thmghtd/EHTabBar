@@ -30,21 +30,19 @@
 	
 	
 	CGFloat _tabWidth;
-	
 }
 @property (nonatomic) CGFloat tabWidth;
 
-@property (nonatomic,retain) UIColor *selectedTextColor;
-@property (nonatomic,retain) UIColor *deselectedTextColor;
+@property (nonatomic, retain) UIColor *selectedTextColor;
+@property (nonatomic, retain) UIColor *deselectedTextColor;
 
-@property (nonatomic,retain) UIColor *shadowColor;
-@property (nonatomic,retain) UIColor *borderColor;
-@property (nonatomic,retain) UIColor *tabColor;
+@property (nonatomic, retain) UIColor *shadowColor;
+@property (nonatomic, retain) UIColor *borderColor;
+@property (nonatomic, retain) UIColor *tabColor;
 
-@property(nonatomic,assign) id<EHTabBarDelegate> delegate;
-@property(nonatomic) NSInteger selectedTabIndex;
+@property (nonatomic, assign) id<EHTabBarDelegate> delegate;
+@property (nonatomic) NSInteger selectedTabIndex;
 
-- (id)initWithFrame:(CGRect)frame;
 - (void)showTabAtIndex:(NSInteger)tabIndex;
 - (void) selectTab:(EHTab *)t;
 - (void) setTabs:(NSArray *)tbs;

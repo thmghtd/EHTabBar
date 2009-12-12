@@ -12,34 +12,33 @@
 
 @implementation EHTabBarDemoAppDelegate
 
-@synthesize window = window_;
-@synthesize tabBar = tabBar_;
-
-
 - (void)applicationDidFinishLaunching:(UIApplication *)application {
     window_ = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
-	self.tabBar = [[EHTabBarController alloc] init];
+	tabBarController_ = [[EHTabBarController alloc] init];
     
-    EggHausViewController *vc1 = [[[EggHausViewController alloc] init] autorelease];
-    CurrentTimeViewController *vc2 = [[[CurrentTimeViewController alloc] init] autorelease];
+    EHTabBar *tabBar = tabBarController_.tabBar;
     
-    [tabBar_ setViewControllers:[NSArray arrayWithObjects:vc1, vc2, nil]];
+    tabBar.tabWidth = 100.0;
+    tabBar.selectedTextColor = [UIColor whiteColor];
+    tabBar.deselectedTextColor = [UIColor darkGrayColor];
     
-    [window_ addSubview:tabBar_.view];
+    tabBarController_.viewControllers = [NSArray arrayWithObjects:
+                               [[[EggHausViewController alloc] init] autorelease],
+                               [[[CurrentTimeViewController alloc] init] autorelease],
+                               nil];
+    
+    [window_ addSubview:tabBarController_.view];
     
     [window_ makeKeyAndVisible];
 }
 
-
-- (void)tabBar:(EHTabBar*)tabBar tabSelected:(NSInteger)selectedIndex {
-	UIAlertView * errorAlert = [[UIAlertView alloc] initWithTitle:[NSString stringWithFormat:@"Tab %d was selected on EHTabBar %@",selectedIndex,tabBar] message:nil delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
-	[errorAlert show];
-	[errorAlert release];
-}
-
 - (void)dealloc {
+    [tabBarController_ release];
+    tabBarController_ = nil;
+    
     [window_ release];
+    window_ = nil;
     [super dealloc];
 }
 
