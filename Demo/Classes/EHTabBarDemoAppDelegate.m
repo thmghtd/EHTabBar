@@ -7,34 +7,28 @@
 //
 
 #import "EHTabBarDemoAppDelegate.h"
+#import "EggHausViewController.h"
+#import "CurrentTimeViewController.h"
 
 @implementation EHTabBarDemoAppDelegate
 
-@synthesize window;
+@synthesize window = window_;
+@synthesize tabBar = tabBar_;
 
 
-- (void)applicationDidFinishLaunching:(UIApplication *)application {    
-
-	
-	//Set up basic UIView
-	UIView *v = [[[UIView alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
-	v.backgroundColor = [UIColor grayColor];
-	
-	//Instanciate EHTabBar
-	EHTabBar *tabBar = [[[EHTabBar alloc] initWithFrame:CGRectMake(0, 20, 320, 65)] autorelease];
-	tabBar.delegate = self;
-	tabBar.tabWidth = 100.0;
-	tabBar.selectedTextColor = [UIColor whiteColor];
-	tabBar.deselectedTextColor = [UIColor darkGrayColor];
-	
-	//Add tabs with a title
-	[tabBar setTabs:[NSArray arrayWithObjects:@"Test", @"Hello", nil]];
-	[v addSubview:tabBar];
-	
-	[window addSubview:v];
-
-    // Override point for customization after application launch
-    [window makeKeyAndVisible];
+- (void)applicationDidFinishLaunching:(UIApplication *)application {
+    window_ = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    
+	self.tabBar = [[EHTabBarController alloc] init];
+    
+    EggHausViewController *vc1 = [[[EggHausViewController alloc] init] autorelease];
+    CurrentTimeViewController *vc2 = [[[CurrentTimeViewController alloc] init] autorelease];
+    
+    [tabBar_ setViewControllers:[NSArray arrayWithObjects:vc1, vc2, nil]];
+    
+    [window_ addSubview:tabBar_.view];
+    
+    [window_ makeKeyAndVisible];
 }
 
 
@@ -45,7 +39,7 @@
 }
 
 - (void)dealloc {
-    [window release];
+    [window_ release];
     [super dealloc];
 }
 

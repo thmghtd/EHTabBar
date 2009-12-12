@@ -9,9 +9,11 @@
 #import <UIKit/UIKit.h>
 #import "EHTab.h"
 
-@protocol EHTabBarDelegate;
+@class EHTabBar;
 
-
+@protocol EHTabBarDelegate
+- (void)tabBar:(EHTabBar *)tabBar tabSelected:(NSInteger)selectedIndex;
+@end
 
 @interface EHTabBar : UIView {
 	id<EHTabBarDelegate> _delegate;
@@ -44,11 +46,7 @@
 
 - (id)initWithFrame:(CGRect)frame;
 - (void)showTabAtIndex:(NSInteger)tabIndex;
-- (void) selectTab:(EHTab *) t;
-- (void) setTabs:(NSArray *) tbs;
+- (void) selectTab:(EHTab *)t;
+- (void) setTabs:(NSArray *)tbs;
 
-@end
-
-@protocol EHTabBarDelegate
-- (void)tabBar:(EHTabBar*)tabBar tabSelected:(NSInteger)selectedIndex;
 @end
