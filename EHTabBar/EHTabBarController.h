@@ -10,9 +10,9 @@
 #import "EHTabBar.h"
 
 @interface EHTabBarController : UIViewController <EHTabBarDelegate> {
-    NSArray *viewControllers_;
-    EHTabBar *tabBar_;
-    UIView *containerView_;
+  NSArray *viewControllers_;
+  EHTabBar *tabBar_;
+  UIView *containerView_;
 }
 
 @property (nonatomic, copy) NSArray *viewControllers;

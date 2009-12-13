@@ -16,12 +16,17 @@
 
 @implementation EHTabBar
 
-@synthesize delegate = _delegate, selectedTabIndex = _selectedTabIndex, borderColor = _borderColor, shadowColor = _shadowColor, 
-tabColor = _tabColor, tabWidth = _tabWidth, selectedTextColor = _selectedTextColor, deselectedTextColor = _deselectedTextColor;
+@synthesize delegate = _delegate, selectedTabIndex = _selectedTabIndex,
+borderColor = _borderColor, shadowColor = _shadowColor, tabColor = _tabColor,
+tabWidth = _tabWidth, selectedTextColor = _selectedTextColor,
+deselectedTextColor = _deselectedTextColor;
 
 - (id)init {
-    if (self = [super initWithFrame:CGRectMake(0, 0, 320, 65)]) {
-        self.backgroundColor = [UIColor colorWithRed:0.776 green:0.796 blue:0.827 alpha:1.0];
+  if (self = [super initWithFrame:CGRectMake(0, 0, 320, 65)]) {
+    self.backgroundColor = [UIColor colorWithRed:0.776
+                                           green:0.796
+                                            blue:0.827
+                                           alpha:1.0];
 		self.borderColor = [UIColor lightGrayColor];
 		self.shadowColor = [UIColor darkGrayColor];
 		self.tabColor = [UIColor grayColor];
@@ -30,11 +35,11 @@ tabColor = _tabColor, tabWidth = _tabWidth, selectedTextColor = _selectedTextCol
 		_selectedTabIndex = 0;
 		_tabItems = [[NSMutableArray alloc] init];
 		self.tabWidth = 0.0;
-    }
-    return self;
+  }
+  return self;
 }
 
-- (void) setTabs:(NSArray *)tbs {
+- (void)setTabs:(NSArray *)tbs {
 	NSInteger index = 0;
 	for(NSString *title in tbs) {
 		EHTab *t = [[[EHTab alloc] initWithTitle:title] autorelease];
@@ -44,27 +49,30 @@ tabColor = _tabColor, tabWidth = _tabWidth, selectedTextColor = _selectedTextCol
 		t.selectedTextColor = self.selectedTextColor;
 		t.deselectedTextColor = self.deselectedTextColor;
 		t.backgroundColor = self.tabColor;
-		if (self.tabWidth > 0) {
+		
+    if (self.tabWidth > 0) {
 			[t setWidth:self.tabWidth];
 		}
 		
 		t.index = index;
-		[t addTarget:self action:@selector(tabWasPressed:) forControlEvents:UIControlEventTouchUpInside];
+    
+		[t addTarget:self
+          action:@selector(tabWasPressed:)
+forControlEvents:UIControlEventTouchUpInside];
+    
 		[_tabItems addObject:t];
 		index++;
 		
 	}
 }
 
-- (void) tabWasPressed: (id) sender
-{
+- (void)tabWasPressed:(id)sender {
 	[self selectTab:(EHTab *) sender];	
 	[self.delegate tabBar:self tabSelected:self.selectedTabIndex];
 }
 
-						
-- (void) selectTab:(EHTab *) t
-{
+
+- (void)selectTab:(EHTab *)t {
 	EHTab *selectedTab = [_tabItems objectAtIndex:self.selectedTabIndex];
 	selectedTab.selected = NO;
 	
@@ -72,8 +80,7 @@ tabColor = _tabColor, tabWidth = _tabWidth, selectedTextColor = _selectedTextCol
 	t.selected = YES;	
 }
 
-- (void) drawRect:(CGRect)rect
-{
+- (void) drawRect:(CGRect)rect {
 	CGContextRef context = UIGraphicsGetCurrentContext(); 
 	CGContextSetStrokeColorWithColor(context,self.borderColor.CGColor);		
 	CGContextSetLineWidth(context, 2.0);
@@ -82,16 +89,14 @@ tabColor = _tabColor, tabWidth = _tabWidth, selectedTextColor = _selectedTextCol
 	CGContextStrokePath(context);
 }
 
-- (void) layoutSubviews
-{
+- (void) layoutSubviews {
 	[super layoutSubviews];
 	
 	CGFloat tabsWidth = 0;
 	
 	
 	CGFloat currentXPos = 0;
-	for(EHTab *t in _tabItems)
-	{
+	for(EHTab *t in _tabItems) {
 		tabsWidth = tabsWidth + [t getWidth];
 	}
 	
@@ -102,7 +107,7 @@ tabColor = _tabColor, tabWidth = _tabWidth, selectedTextColor = _selectedTextCol
 	NSInteger index = 0;
 	for(EHTab *t in _tabItems){
 		CGFloat xPos = currentXPos;
-
+    
 		if(index != 0)
 			xPos = xPos + kTabMargin;
 		
@@ -121,7 +126,7 @@ tabColor = _tabColor, tabWidth = _tabWidth, selectedTextColor = _selectedTextCol
 	}
 }
 
-- (void)showTabAtIndex:(NSInteger)tabIndex{
+- (void)showTabAtIndex:(NSInteger)tabIndex {
 	[self selectTab:[_tabItems objectAtIndex:tabIndex]];
 }
 

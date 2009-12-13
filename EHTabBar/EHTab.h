@@ -14,7 +14,7 @@
 	UIColor *_titleColor;	
 	UILabel *_label;
 	
-    UIColor *_cornerColor;
+  UIColor *_cornerColor;
 	UIColor *_borderColor;
 	UIColor *_shadowColor;
 	

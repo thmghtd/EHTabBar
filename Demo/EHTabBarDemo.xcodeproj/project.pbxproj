@@ -11,11 +11,11 @@
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
-		267C13CF10D36E1D00A01F51 /* EHTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 267C13CB10D36E1D00A01F51 /* EHTabBar.m */; };
-		267C13D010D36E1D00A01F51 /* EHTab.m in Sources */ = {isa = PBXBuildFile; fileRef = 267C13CD10D36E1D00A01F51 /* EHTab.m */; };
-		267C140510D3703D00A01F51 /* CurrentTimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 267C140410D3703D00A01F51 /* CurrentTimeViewController.m */; };
-		267C141510D3718200A01F51 /* EHTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 267C141310D3718200A01F51 /* EHTabBarController.m */; };
-		267C141C10D371CA00A01F51 /* EggHausViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 267C141A10D371CA00A01F51 /* EggHausViewController.m */; };
+		264F887810D4678F00C6C83C /* EHTab.m in Sources */ = {isa = PBXBuildFile; fileRef = 264F887310D4678F00C6C83C /* EHTab.m */; };
+		264F887910D4678F00C6C83C /* EHTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 264F887510D4678F00C6C83C /* EHTabBar.m */; };
+		264F887A10D4678F00C6C83C /* EHTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 264F887710D4678F00C6C83C /* EHTabBarController.m */; };
+		264F889210D4684000C6C83C /* LoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = 264F889110D4684000C6C83C /* LoginController.m */; };
+		264F889510D4685400C6C83C /* SignUpController.m in Sources */ = {isa = PBXBuildFile; fileRef = 264F889410D4685400C6C83C /* SignUpController.m */; };
 		288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765FC0DF74451002DB57D /* CoreGraphics.framework */; };
 /* End PBXBuildFile section */
 
@@ -25,16 +25,16 @@
 		1D3623250D0F684500981E51 /* EHTabBarDemoAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EHTabBarDemoAppDelegate.m; sourceTree = "<group>"; };
 		1D6058910D05DD3D006BFB54 /* EHTabBarDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EHTabBarDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		267C13CB10D36E1D00A01F51 /* EHTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EHTabBar.m; path = ../EHTabBar.m; sourceTree = SOURCE_ROOT; };
-		267C13CC10D36E1D00A01F51 /* EHTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EHTabBar.h; path = ../EHTabBar.h; sourceTree = SOURCE_ROOT; };
-		267C13CD10D36E1D00A01F51 /* EHTab.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EHTab.m; path = ../EHTab.m; sourceTree = SOURCE_ROOT; };
-		267C13CE10D36E1D00A01F51 /* EHTab.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EHTab.h; path = ../EHTab.h; sourceTree = SOURCE_ROOT; };
-		267C140310D3703D00A01F51 /* CurrentTimeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CurrentTimeViewController.h; sourceTree = "<group>"; };
-		267C140410D3703D00A01F51 /* CurrentTimeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CurrentTimeViewController.m; sourceTree = "<group>"; };
-		267C141310D3718200A01F51 /* EHTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EHTabBarController.m; path = ../EHTabBarController.m; sourceTree = SOURCE_ROOT; };
-		267C141410D3718200A01F51 /* EHTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EHTabBarController.h; path = ../EHTabBarController.h; sourceTree = SOURCE_ROOT; };
-		267C141A10D371CA00A01F51 /* EggHausViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EggHausViewController.m; sourceTree = "<group>"; };
-		267C141B10D371CA00A01F51 /* EggHausViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EggHausViewController.h; sourceTree = "<group>"; };
+		264F887210D4678F00C6C83C /* EHTab.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EHTab.h; path = ../EHTabBar/EHTab.h; sourceTree = SOURCE_ROOT; };
+		264F887310D4678F00C6C83C /* EHTab.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EHTab.m; path = ../EHTabBar/EHTab.m; sourceTree = SOURCE_ROOT; };
+		264F887410D4678F00C6C83C /* EHTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EHTabBar.h; path = ../EHTabBar/EHTabBar.h; sourceTree = SOURCE_ROOT; };
+		264F887510D4678F00C6C83C /* EHTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EHTabBar.m; path = ../EHTabBar/EHTabBar.m; sourceTree = SOURCE_ROOT; };
+		264F887610D4678F00C6C83C /* EHTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EHTabBarController.h; path = ../EHTabBar/EHTabBarController.h; sourceTree = SOURCE_ROOT; };
+		264F887710D4678F00C6C83C /* EHTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EHTabBarController.m; path = ../EHTabBar/EHTabBarController.m; sourceTree = SOURCE_ROOT; };
+		264F889010D4684000C6C83C /* LoginController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginController.h; path = Controllers/LoginController.h; sourceTree = "<group>"; };
+		264F889110D4684000C6C83C /* LoginController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginController.m; path = Controllers/LoginController.m; sourceTree = "<group>"; };
+		264F889310D4685400C6C83C /* SignUpController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SignUpController.h; path = Controllers/SignUpController.h; sourceTree = "<group>"; };
+		264F889410D4685400C6C83C /* SignUpController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SignUpController.m; path = Controllers/SignUpController.m; sourceTree = "<group>"; };
 		288765FC0DF74451002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* EHTabBarDemo_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EHTabBarDemo_Prefix.pch; sourceTree = "<group>"; };
@@ -58,7 +58,7 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				26A32DA110D377A6008329F8 /* ViewControllers */,
+				26A32DA110D377A6008329F8 /* Controllers */,
 				1D3623240D0F684500981E51 /* EHTabBarDemoAppDelegate.h */,
 				1D3623250D0F684500981E51 /* EHTabBarDemoAppDelegate.m */,
 			);
@@ -73,34 +73,35 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		267C13CA10D36E0900A01F51 /* EHTabBar */ = {
+		264F887110D4678F00C6C83C /* EHTabBar */ = {
 			isa = PBXGroup;
 			children = (
-				267C141310D3718200A01F51 /* EHTabBarController.m */,
-				267C141410D3718200A01F51 /* EHTabBarController.h */,
-				267C13CB10D36E1D00A01F51 /* EHTabBar.m */,
-				267C13CC10D36E1D00A01F51 /* EHTabBar.h */,
-				267C13CD10D36E1D00A01F51 /* EHTab.m */,
-				267C13CE10D36E1D00A01F51 /* EHTab.h */,
+				264F887210D4678F00C6C83C /* EHTab.h */,
+				264F887310D4678F00C6C83C /* EHTab.m */,
+				264F887410D4678F00C6C83C /* EHTabBar.h */,
+				264F887510D4678F00C6C83C /* EHTabBar.m */,
+				264F887610D4678F00C6C83C /* EHTabBarController.h */,
+				264F887710D4678F00C6C83C /* EHTabBarController.m */,
 			);
 			name = EHTabBar;
-			sourceTree = "<group>";
+			path = ../EHTabBar;
+			sourceTree = SOURCE_ROOT;
 		};
-		26A32DA110D377A6008329F8 /* ViewControllers */ = {
+		26A32DA110D377A6008329F8 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				267C141A10D371CA00A01F51 /* EggHausViewController.m */,
-				267C141B10D371CA00A01F51 /* EggHausViewController.h */,
-				267C140310D3703D00A01F51 /* CurrentTimeViewController.h */,
-				267C140410D3703D00A01F51 /* CurrentTimeViewController.m */,
+				264F889010D4684000C6C83C /* LoginController.h */,
+				264F889110D4684000C6C83C /* LoginController.m */,
+				264F889310D4685400C6C83C /* SignUpController.h */,
+				264F889410D4685400C6C83C /* SignUpController.m */,
 			);
-			name = ViewControllers;
+			name = Controllers;
 			sourceTree = "<group>";
 		};
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
-				267C13CA10D36E0900A01F51 /* EHTabBar */,
+				264F887110D4678F00C6C83C /* EHTabBar */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
@@ -191,11 +192,11 @@
 			files = (
 				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
 				1D3623260D0F684500981E51 /* EHTabBarDemoAppDelegate.m in Sources */,
-				267C13CF10D36E1D00A01F51 /* EHTabBar.m in Sources */,
-				267C13D010D36E1D00A01F51 /* EHTab.m in Sources */,
-				267C140510D3703D00A01F51 /* CurrentTimeViewController.m in Sources */,
-				267C141510D3718200A01F51 /* EHTabBarController.m in Sources */,
-				267C141C10D371CA00A01F51 /* EggHausViewController.m in Sources */,
+				264F887810D4678F00C6C83C /* EHTab.m in Sources */,
+				264F887910D4678F00C6C83C /* EHTabBar.m in Sources */,
+				264F887A10D4678F00C6C83C /* EHTabBarController.m in Sources */,
+				264F889210D4684000C6C83C /* LoginController.m in Sources */,
+				264F889510D4685400C6C83C /* SignUpController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

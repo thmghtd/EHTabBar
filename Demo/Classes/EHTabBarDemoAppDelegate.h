@@ -10,8 +10,8 @@
 #import "EHTabBarController.h"
 
 @interface EHTabBarDemoAppDelegate : NSObject <UIApplicationDelegate> {
-    UIWindow *window_;
-    EHTabBarController *tabBarController_;
+  UIWindow *window_;
+  EHTabBarController *tabBarController_;
 }
 
 @end

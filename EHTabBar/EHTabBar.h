@@ -19,7 +19,7 @@
 	id<EHTabBarDelegate> _delegate;
 	NSInteger _selectedTabIndex;
 	NSMutableArray* _tabItems;
-
+  
 	
 	UIColor *_borderColor;
 	UIColor *_shadowColor;
