@@ -8,9 +8,6 @@
 
 #import "SignUpController.h"
 
-#define kTagOffset 100
-#define kFirstNameFieldTag 100
-
 @implementation SignUpController
 
 - (id)init {
@@ -23,7 +20,7 @@
 
 - (id)initWithStyle:(UITableViewStyle)style {
   if (self = [super initWithStyle:style]) {
-    _title = @"Sign Up";
+    self.title = @"Sign Up";
   }
   return self;
 }
@@ -49,7 +46,6 @@
 }
 
 - (void)loginClicked {
-  [[self.tableView viewWithTag:kFirstNameFieldTag] resignFirstResponder];
   [[[[UIAlertView alloc] initWithTitle:@"Sign up success!" 
                                message:@"You have successfully signed up!"
                               delegate:nil
@@ -80,8 +76,6 @@
                              CGRectMake(110, 12, 185, 30)]
                             autorelease];
   
-  textField.delegate = self;
-  textField.tag = indexPath.row + kTagOffset;
   textField.returnKeyType = UIReturnKeyNext;
   textField.autocapitalizationType = UITextAutocapitalizationTypeNone;
   
@@ -118,14 +112,6 @@ viewForFooterInSection:(NSInteger)section {
 - (NSIndexPath *)tableView:(UITableView *)tableView 
   willSelectRowAtIndexPath:(NSIndexPath *)indexPath {
   return nil;
-}
-
-#pragma mark -
-#pragma mark UITextFieldDelegate methods
-- (BOOL)textFieldShouldReturn:(UITextField *)textField {
-  NSInteger nextTag = -textField.tag + 1 + kTagOffset * 2;
-  [[self.tableView viewWithTag:nextTag] becomeFirstResponder];
-  return NO;
 }
 
 @end

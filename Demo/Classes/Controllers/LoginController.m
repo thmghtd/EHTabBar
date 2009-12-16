@@ -8,9 +8,6 @@
 
 #import "LoginController.h"
 
-#define kTagOffset 100
-#define kUsernameFieldTag 100
-
 @implementation LoginController
 
 - (id)init {
@@ -23,7 +20,7 @@
 
 - (id)initWithStyle:(UITableViewStyle)style {
   if (self = [super initWithStyle:style]) {
-    _title = @"Login";
+    self.title = @"Login";
   }
   return self;
 }
@@ -49,7 +46,6 @@
 }
 
 - (void)loginClicked {
-  [[self.tableView viewWithTag:kUsernameFieldTag] resignFirstResponder];
   [[[[UIAlertView alloc] initWithTitle:@"Login success!" 
                              message:@"You have successfully logged in!"
                             delegate:nil
@@ -80,8 +76,6 @@
                              CGRectMake(110, 12, 185, 30)]
                             autorelease];
   
-  textField.delegate = self;
-  textField.tag = indexPath.row + kTagOffset;
   textField.returnKeyType = UIReturnKeyNext;
   textField.autocapitalizationType = UITextAutocapitalizationTypeNone;
   
@@ -119,14 +113,6 @@
 - (NSIndexPath *)tableView:(UITableView *)tableView 
   willSelectRowAtIndexPath:(NSIndexPath *)indexPath {
   return nil;
-}
-
-#pragma mark -
-#pragma mark UITextFieldDelegate methods
-- (BOOL)textFieldShouldReturn:(UITextField *)textField {
-  NSInteger nextTag = -textField.tag + 1 + kTagOffset * 2;
-  [[self.tableView viewWithTag:nextTag] becomeFirstResponder];
-  return NO;
 }
 
 @end

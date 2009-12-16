@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 
-@interface LoginController : UITableViewController <UITextFieldDelegate> {
+@interface LoginController : UITableViewController {
   UIView *footerView_;
 }
 
