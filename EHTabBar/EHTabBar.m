@@ -27,10 +27,10 @@ deselectedTextColor = _deselectedTextColor;
                                            green:0.796
                                             blue:0.827
                                            alpha:1.0];
-		self.borderColor = [UIColor lightGrayColor];
+		self.borderColor = [UIColor whiteColor];
 		self.shadowColor = [UIColor darkGrayColor];
 		self.tabColor = [UIColor grayColor];
-		self.selectedTextColor = [UIColor blackColor];
+		self.selectedTextColor = [UIColor whiteColor];
 		self.deselectedTextColor = [UIColor darkGrayColor];
 		_selectedTabIndex = 0;
 		_tabItems = [[NSMutableArray alloc] init];

@@ -14,13 +14,13 @@
 
 - (void)applicationDidFinishLaunching:(UIApplication *)application {
   window_ = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-  
-	tabBarController_ = [[EHTabBarController alloc] init];
+	
+  tabBarController_ = [[EHTabBarController alloc] init];
   
   EHTabBar *tabBar = tabBarController_.tabBar;
   
   tabBar.tabWidth = 100.0;
-  tabBar.selectedTextColor = [UIColor lightTextColor];
+  tabBar.selectedTextColor = [UIColor whiteColor];
   tabBar.deselectedTextColor = [UIColor darkTextColor];
   
   tabBarController_.viewControllers = [NSArray arrayWithObjects:

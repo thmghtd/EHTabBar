@@ -3,7 +3,6 @@
 //  EHTabBarDemo
 //
 //  Created by Shayne Sweeney on 12/11/09.
-//  Copyright 2009 __MyCompanyName__. All rights reserved.
 //
 
 #import "EHTabBarController.h"
@@ -34,11 +33,11 @@
 
 - (void)loadView {
   [super loadView];
-  
+  self.view = [[UIView alloc] initWithFrame:[[UIScreen mainScreen] applicationFrame]];
   [self.view addSubview:tabBar_];
   
   containerView_ = [[UIView alloc] initWithFrame:
-                    CGRectMake(0, tabBar_.frame.size.height, 320, 335)];
+                    CGRectMake(0, tabBar_.frame.size.height, 320, self.view.frame.size.height - tabBar_.frame.size.height)];
   
   [self.view addSubview:containerView_];
   
@@ -57,6 +56,7 @@
     } else {
       [titles addObject:@"Untitled"];
     }
+	vc.view.backgroundColor = tabBar_.tabColor;
   }
   
   [tabBar_ setTabs:titles];
@@ -70,6 +70,7 @@
     [v removeFromSuperview];
   }
   UIViewController *vc = [viewControllers_ objectAtIndex:selectedIndex];
+  vc.view.frame = containerView_.bounds;
   [containerView_ addSubview:vc.view];
 }
 
