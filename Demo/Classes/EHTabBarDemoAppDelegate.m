@@ -7,46 +7,39 @@
 //
 
 #import "EHTabBarDemoAppDelegate.h"
+#import "LoginController.h"
+#import "SignUpController.h"
 
 @implementation EHTabBarDemoAppDelegate
 
-@synthesize window;
-
-
-- (void)applicationDidFinishLaunching:(UIApplication *)application {    
-
+- (void)applicationDidFinishLaunching:(UIApplication *)application {
+  window_ = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 	
-	//Set up basic UIView
-	UIView *v = [[[UIView alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
-	v.backgroundColor = [UIColor grayColor];
-	
-	//Instanciate EHTabBar
-	EHTabBar *tabBar = [[[EHTabBar alloc] initWithFrame:CGRectMake(0, 20, 320, 65)] autorelease];
-	tabBar.delegate = self;
-	tabBar.tabWidth = 100.0;
-	tabBar.selectedTextColor = [UIColor whiteColor];
-	tabBar.deselectedTextColor = [UIColor darkGrayColor];
-	
-	//Add tabs with a title
-	[tabBar setTabs:[NSArray arrayWithObjects:@"Test", @"Hello", nil]];
-	[v addSubview:tabBar];
-	
-	[window addSubview:v];
-
-    // Override point for customization after application launch
-    [window makeKeyAndVisible];
-}
-
-
-- (void)tabBar:(EHTabBar*)tabBar tabSelected:(NSInteger)selectedIndex {
-	UIAlertView * errorAlert = [[UIAlertView alloc] initWithTitle:[NSString stringWithFormat:@"Tab %d was selected on EHTabBar %@",selectedIndex,tabBar] message:nil delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
-	[errorAlert show];
-	[errorAlert release];
+  tabBarController_ = [[EHTabBarController alloc] init];
+  
+  EHTabBar *tabBar = tabBarController_.tabBar;
+  
+  tabBar.tabWidth = 100.0;
+  tabBar.selectedTextColor = [UIColor whiteColor];
+  tabBar.deselectedTextColor = [UIColor darkTextColor];
+  
+  tabBarController_.viewControllers = [NSArray arrayWithObjects:
+                                       [[[LoginController alloc] init] autorelease],
+                                       [[[SignUpController alloc] init] autorelease],
+                                       nil];
+  
+  [window_ addSubview:tabBarController_.view];
+  
+  [window_ makeKeyAndVisible];
 }
 
 - (void)dealloc {
-    [window release];
-    [super dealloc];
+  [tabBarController_ release];
+  tabBarController_ = nil;
+  
+  [window_ release];
+  window_ = nil;
+  [super dealloc];
 }
 
 

@@ -7,12 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "EHTabBar.h"
-@interface EHTabBarDemoAppDelegate : NSObject <UIApplicationDelegate, EHTabBarDelegate> {
-    UIWindow *window;
-}
+#import "EHTabBarController.h"
 
-@property (nonatomic, retain) IBOutlet UIWindow *window;
+@interface EHTabBarDemoAppDelegate : NSObject <UIApplicationDelegate> {
+  UIWindow *window_;
+  EHTabBarController *tabBarController_;
+}
 
 @end
 

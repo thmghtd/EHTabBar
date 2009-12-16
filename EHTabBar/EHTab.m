@@ -16,14 +16,18 @@
 @implementation EHTab
 
 
-@synthesize title = _title, radius = _radius, selected = _selected, borderColor = _borderColor, shadowColor = _shadowColor, cornerColor = _cornerColor, index, selectedTextColor = _selectedTextColor, deselectedTextColor = _deselectedTextColor;
+@synthesize title = _title, radius = _radius, selected = _selected,
+            borderColor = _borderColor, shadowColor = _shadowColor,
+            cornerColor = _cornerColor, index,
+            selectedTextColor = _selectedTextColor,
+            deselectedTextColor = _deselectedTextColor;
 
 - (id)initWithTitle:(NSString*)title {
 	
 	CGSize size = [title sizeWithFont:kDefaultFont];
 	CGFloat width = size.width + (kLabelPadding * 2);	
 	CGFloat height = kTabHeight;
-
+  
 	if (self = [super initWithFrame:CGRectMake(0, 0, width, height)]) {
 		self.title = title;
 		
@@ -76,15 +80,21 @@
 		_label.textColor = self.selectedTextColor;
 	else
 		_label.textColor = self.deselectedTextColor;
-
+  
 	_selected = s;
 	[self setNeedsDisplay];
 }
 
 - (void) setWidth: (CGFloat) w
 {
-	self.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y, w, self.frame.size.height);
-	_label.frame = CGRectMake(_label.frame.origin.x, _label.frame.origin.y, w, _label.frame.size.height);
+	self.frame = CGRectMake(self.frame.origin.x,
+                          self.frame.origin.y,
+                          w,
+                          self.frame.size.height);
+	_label.frame = CGRectMake(_label.frame.origin.x,
+                            _label.frame.origin.y,
+                            w,
+                            _label.frame.size.height);
 }
 - (CGFloat) getWidth
 {
@@ -101,8 +111,8 @@
 #pragma mark -
 
 -(void) drawRect:(CGRect) rect { // this is one of the last things that happens	
-    CGContextRef c = UIGraphicsGetCurrentContext();
-    if (c != nil)  {
+  CGContextRef c = UIGraphicsGetCurrentContext();
+  if (c != nil)  {
 		
 		if (self.selected) {
 			CGContextSetLineWidth(c, 2.0f);
@@ -144,12 +154,11 @@
 			
 			CGContextFillPath(c);
 			
-		}
-		else {
+		} else {
 			CGContextClearRect(c, rect);
 			CGContextSetFillColorWithColor(c, self.cornerColor.CGColor);
 			CGContextFillRect(c,rect);
-
+      
 			
 			
 			CGContextSetStrokeColorWithColor(c,self.borderColor.CGColor);	
@@ -159,13 +168,13 @@
 			CGContextMoveToPoint(c, 0.0, self.frame.size.height);
 			CGContextAddLineToPoint(c, self.frame.size.width, self.frame.size.height);
 			CGContextStrokePath(c);
-						
+      
 		}
-
+    
 		if(![_label isDescendantOfView:self])
 			[self addSubview:_label];
 		
-    }
+  }
 	
 }
 
